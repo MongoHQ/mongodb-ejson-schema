@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+
+  "definitions": {
+    "subdocument": {
+      "type": "object",
+      "patternProperties": {
+        "^[^$]": {"$ref": "#/definitions/value"}
+      },
+      "additionalProperties": false
+    },
+  	"value": {
+      "oneOf": [
+        {"type": "string"},
+        {"type": "number"},
+        {"type": "boolean"},
+        {"type": "null"},
+        {"type": "array", "items": {"$ref": "#/definitions/value"}},
+        {"$ref": "#/definitions/$oid" },
+        {"$ref": "#/definitions/subdocument" }
+      ]
+  	},
+    "$oid": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{24}$"
+        }
+      },
+      "required": ["$oid"],
+      "additionalProperties": false
+    }
+  },
+
+  "allOf": [
+    {"$ref": "#/definitions/subdocument"},
+    {"required": ["_id"]}
+  ]
+}
