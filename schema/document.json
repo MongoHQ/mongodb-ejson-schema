@@ -15,22 +15,27 @@
         {"type": "number"},
         {"type": "boolean"},
         {"type": "null"},
-        {"$ref": "#/definitions/$oid" },
+        {"$ref": "#/definitions/$binary" },
         {"$ref": "#/definitions/$date" },
+        {"$ref": "#/definitions/$oid" },
         {"$ref": "#/definitions/$timestamp" },
         {"type": "array", "items": {"$ref": "#/definitions/value"}},
         {"$ref": "#/definitions/subdocument" }
       ]
   	},
-    "$oid": {
+    "$binary": {
       "type": "object",
       "properties": {
-        "$oid": {
+        "$binary": {
           "type": "string",
-          "pattern": "^[0-9a-f]{24}$"
+          "pattern": "[^-A-Za-z0-9+/=]|=[^=]|={3,}$"
+        },
+        "$type": {
+          "type": "string",
+          "pattern": "[a-z0-9]"
         }
       },
-      "required": ["$oid"],
+      "required": ["$binary", "$type"],
       "additionalProperties": false
     },
     "$date": {
@@ -41,6 +46,17 @@
         }
       },
       "required": ["$date"],
+      "additionalProperties": false
+    },
+    "$oid": {
+      "type": "object",
+      "properties": {
+        "$oid": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{24}$"
+        }
+      },
+      "required": ["$oid"],
       "additionalProperties": false
     },
     "$timestamp": {
