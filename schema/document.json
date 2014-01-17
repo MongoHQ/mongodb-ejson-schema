@@ -36,7 +36,7 @@
       "type": "object",
       "properties": {
         "$date": {
-          "type": "number"
+          "type": "integer"
         }
       },
       "required": ["$date"],
