@@ -27,8 +27,7 @@
       "type": "object",
       "properties": {
         "$binary": {
-          "type": "string",
-          "pattern": "[^-A-Za-z0-9+/=]|=[^=]|={3,}$"
+          "type": "string"
         },
         "$type": {
           "type": "string",
