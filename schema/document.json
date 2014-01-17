@@ -17,6 +17,7 @@
         {"type": "null"},
         {"type": "array", "items": {"$ref": "#/definitions/value"}},
         {"$ref": "#/definitions/$oid" },
+        {"$ref": "#/definitions/$date" },
         {"$ref": "#/definitions/subdocument" }
       ]
   	},
@@ -29,6 +30,16 @@
         }
       },
       "required": ["$oid"],
+      "additionalProperties": false
+    },
+    "$date": {
+      "type": "object",
+      "properties": {
+        "$date": {
+          "type": "number"
+        }
+      },
+      "required": ["$date"],
       "additionalProperties": false
     }
   },
