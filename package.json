@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "tap test/*.test.js"
   },
   "repository": {
     "type": "git",
@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/supershabam/mongodb-ejson-schema/issues"
   },
-  "homepage": "https://github.com/supershabam/mongodb-ejson-schema"
+  "homepage": "https://github.com/supershabam/mongodb-ejson-schema",
+  "dependencies": {
+    "jayschema": "~0.2.3",
+    "tap": "~0.4.8"
+  }
 }
