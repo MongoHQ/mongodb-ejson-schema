@@ -15,10 +15,10 @@
         {"type": "number"},
         {"type": "boolean"},
         {"type": "null"},
-        {"type": "array", "items": {"$ref": "#/definitions/value"}},
         {"$ref": "#/definitions/$oid" },
         {"$ref": "#/definitions/$date" },
         {"$ref": "#/definitions/$timestamp" },
+        {"type": "array", "items": {"$ref": "#/definitions/value"}},
         {"$ref": "#/definitions/subdocument" }
       ]
   	},
