@@ -18,6 +18,7 @@
         {"type": "array", "items": {"$ref": "#/definitions/value"}},
         {"$ref": "#/definitions/$oid" },
         {"$ref": "#/definitions/$date" },
+        {"$ref": "#/definitions/$timestamp" },
         {"$ref": "#/definitions/subdocument" }
       ]
   	},
@@ -40,6 +41,22 @@
         }
       },
       "required": ["$date"],
+      "additionalProperties": false
+    },
+    "$timestamp": {
+      "type": "object",
+      "properties": {
+        "$timestamp": {
+          "type": "object",
+          "properties": {
+            "t": {"type": "integer"},
+            "i": {"type": "integer"}
+          },
+          "required": ["t", "i"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["$timestamp"],
       "additionalProperties": false
     }
   },
