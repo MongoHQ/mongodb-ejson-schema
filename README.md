@@ -23,3 +23,7 @@ This is the schema for a query document. This allows for additional field values
 ##LICENSE
 
 MIT
+
+this is just a test
+of a paragraph
+with newline
